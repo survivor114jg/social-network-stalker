@@ -1,9 +1,11 @@
-from bs4 import BeautifulSoup
-from services import config
 import requests
 
+from bs4 import BeautifulSoup
+from services import config
+
 class Twitter():
-    twitter_base_url = "https://twitter.com"
+
+    TWITTER_BASE_URL = "https://twitter.com"
 
     config_service = config.Config()
 
@@ -24,5 +26,5 @@ class Twitter():
         return twitter_data
 
     def get_twitter_full_url(self):
-        twitter_full_url = self.twitter_base_url + "/" + self.config_service.get_twitter_account()
+        twitter_full_url = self.TWITTER_BASE_URL + "/" + self.config_service.get_twitter_account()
         return twitter_full_url

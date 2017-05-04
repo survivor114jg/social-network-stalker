@@ -2,8 +2,9 @@ import ConfigParser
 
 class Config:
 
-    social_network_section = "SocialNetwork"
-    twitter_account_config_key = "twitter_account"
+    SOCIAL_NETWORK_SECTION = "SocialNetwork"
+    TWITTER_ACCOUNT_CONFIG_KEY = "twitter_account"
+
     config_parser = None
 
     def __init__(self):
@@ -11,5 +12,5 @@ class Config:
         self.config_parser.readfp(open("config.cfg"))
 
     def get_twitter_account(self):
-        twitter_account = self.config_parser.get(self.social_network_section, self.twitter_account_config_key)
+        twitter_account = self.config_parser.get(self.SOCIAL_NETWORK_SECTION, self.TWITTER_ACCOUNT_CONFIG_KEY)
         return twitter_account
